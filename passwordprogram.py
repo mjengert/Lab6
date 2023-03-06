@@ -22,6 +22,12 @@ def encode(password):
     enc_password = []
     for value in og_password:
         value += 3
+        if value == 10:
+            value = 0
+        if value == 11:
+            value = 1
+        if value == 12:
+            value = 2
         enc_password.append(str(value))
     password_enc = ''.join(enc_password)
     return password_enc
