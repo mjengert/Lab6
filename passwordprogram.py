@@ -9,9 +9,12 @@ def password_menu():
     print('')
 
 
-''' Takes in string password input, then iterates over the string to create an interger of each individual number within a list.
-Then adds 3 to each number within the list and adds it to a seperate list (enc_password) to seperate the encoded from the decoded version. 
-Last it joins each value within the (enc_password) list to return the final encoded password.'''
+'''Takes in string password input, then iterates over the string to create an integer of each individual number 
+within a list. Then adds 3 to each number within the list and adds it to a separate list (enc_password) to separate 
+the encoded from the decoded version. Last it joins each value within the (enc_password) list to return the final 
+encoded password.'''
+
+
 def encode(password):
     og_password = []
     for num in password:
@@ -27,19 +30,22 @@ def encode(password):
 def decode(password):
     pass
 
+
 # Begins password encoding and decoding program
 if __name__ == '__main__':
     menu_on = True
     while menu_on:
         password_menu()
         op_choice = int(input('Please enter an option: '))
-        # Runs through encode function, stores the final encoded product as password_encoded variable. Then prints statement after completion.
+        '''Runs through encode function, stores the final encoded product as password_encoded variable. Then prints 
+        statement after completion.'''
         if op_choice == 1:
             password_og = input('Please enter your password to encode: ')
             password_encoded = encode(password_og)
             print('Your password has been encoded and stored!')
             print('')
-        # Runs through decode function, stores the final decoded product as password_decoded variable. Then prints statement with the encoded and decoded password.
+        '''Runs through decode function, stores the final decoded product as password_decoded variable. Then prints 
+        statement with the encoded and decoded password.'''
         if op_choice == 2:
             password_decoded = decode(password_encoded)
             print(f'The encoded password is {password_encoded}, and the original password is {password_decoded}')
