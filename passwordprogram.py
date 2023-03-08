@@ -29,13 +29,25 @@ def encode(password):
         if value == 12:
             value = 2
         enc_password.append(str(value))
-    password_enc = ''.join(enc_password)
-    return password_enc
+    password_encoded = ''.join(enc_password)
+    return password_encoded
 
-
-def decode(password):
-    pass
-
+def decode(password_encoded):
+    ogdeepass = []
+    for i in password_encoded:
+        ogdeepass.append(int(i))
+    depassword = []
+    for x in ogdeepass:
+        x -= 3
+        if x == 0:
+            x = 10
+        if x == 1:
+            x = 11
+        if x == 12:
+            x = 2
+        depassword.append(str(x))
+    password_de = ''.join(depassword)
+    return password_de
 
 # Begins password encoding and decoding program
 if __name__ == '__main__':
